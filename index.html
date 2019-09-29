@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="\assets\css\style.css">
+    <link rel="stylesheet" href="assets\css\style.css">
     <title> Crystal Collector Game </title>
 </head>
 
@@ -22,7 +22,7 @@
     <div class="container">
         <div class="row">
             <!-- Instructions of the game -->
-            <div class="col-6">
+            <div class="col-6" id="instructions">
                 <p> Here I'm adding the instructions of the game, I'll need to change this Lorem Ipsum for the real
                     instructions</p>
                 <br>
@@ -35,14 +35,12 @@
 
             </div>
             <!-- Random number to guess -->
-            <div class="col-4">
+            <div class="col-4" id="cardNumber">
                 <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
                     <div class="card-header"> Can you reach this number? </div>
                     <div class="card-body">
                         <br>
-                        <br>
-                        <p class="card-text"> ### </p>
-                        <br>
+                        <p class="card-text" id="reachNumber"> ### </p>
                         <br>
                     </div>
                 </div>
@@ -53,25 +51,27 @@
     <div class="container">
         <div class="row">
             <!-- 4 Buttons of the Crystals -->
-            <div class="col-3">
+            <div class="col-1">
                 <img src="assets/images/crystal1.jpg" />
 
             </div>
 
-            <div class="col-3">
+            <div class="col-1">
                 <img src="assets/images/crystal2.jpg" />
 
             </div>
 
-            <div class="col-3">
+            <div class="col-1">
                 <img src="assets/images/crystal3.jpg" />
 
             </div>
 
-            <div class="col-3">
+            <div class="col-1">
                 <img src="assets/images/crystal4.jpg" />
 
             </div>
+
+            <div class="col-8"></div>
 
         </div>
 
@@ -84,7 +84,6 @@
                         <p>Your score is</p>
                         <br>
                         <p id="score"></p>
-                        <br>
                     </div>
                 </div>
             </div>
