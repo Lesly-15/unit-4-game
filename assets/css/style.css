@@ -13,7 +13,11 @@ h1 {
 
 #cardNumber {
     text-align: center;
+    font-weight: bolder;
+    font-size: 30px;   
 }
+
+
 
 #reachNumber{
     font-weight: bolder;
