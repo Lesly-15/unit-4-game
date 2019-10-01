@@ -132,21 +132,28 @@
 
         // 1. Generate the random number the player will try to reach. Number sb from 19 - 120 only.
         
-        var randomToGuess = Math.floor(Math.random()*121) + 19;
-        console.log(randomToGuess);
-        var randomToGuessText = document.getElementById("randomToGuess");
-        randomToGuessText.textContent = randomToGuess;
+        var randomToGuess;
+        var randomToGuessText; 
 
         // 2. Assign random values to the Crystal Buttons. I want the values to be only from 1 -12.
-       
-        var crystal1Value = Math.floor(Math.random()*13) + 1;
+
+        var crystal1Value;
+        var crystal2Value;
+        var crystal3Value;
+        var crystal4Value;
+
+        function randomizeCrystals() {
+  
+        crystal1Value = Math.floor(Math.random()*13) + 1;
         console.log(crystal1Value);
-        var crystal2Value = Math.floor(Math.random()*13) + 1;
+        crystal2Value = Math.floor(Math.random()*13) + 1;
         console.log(crystal2Value);
-        var crystal3Value = Math.floor(Math.random()*13) + 1;
+        crystal3Value = Math.floor(Math.random()*13) + 1;
         console.log(crystal3Value);
-        var crystal4Value = Math.floor(Math.random()*13) + 1;
+        crystal4Value = Math.floor(Math.random()*13) + 1;
         console.log(crystal4Value);
+
+        };
 
         // Player score-wins-looses starts in zero.
         var score=0;
@@ -243,16 +250,31 @@
 
 
 
-        // // RESET function
-        // $( "#resetBtn" ).on("click" , function() {
+        // RESET function
+        $( "#resetBtn" ).on("click" , function() {
 
-        // // execute the random numbers function
+            reset ();
 
-        // // reset score to 0
-
-        // };
+        });
            
-        
+    function reset () {
+
+        // execute the random numbers function
+
+        randomizeCrystals();
+
+        // reset score to 0
+
+        score = 0
+
+        randomToGuess = Math.floor(Math.random()*121) + 19;
+        console.log(randomToGuess);
+        randomToGuessText = document.getElementById("randomToGuess");
+        randomToGuessText.textContent = randomToGuess;
+
+    };
+
+    reset ();
     </script>
 
 
