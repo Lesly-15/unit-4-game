@@ -24,12 +24,15 @@
         <div class="row">
             <!-- Instructions of the game -->
             <div class="col-6" id="instructions">
-                <p> Here I'm adding the instructions of the game, I'll need to change this Lorem Ipsum for the real
-                    instructions</p>
+                <h4>HOW TO PLAY?</h4>
+                <p> Let's try to reach the number in the gray box</p>
                 <br>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero atque mollitia harum. Ut itaque
-                    dignissimos assumenda et consequuntur adipisci accusamus. Numquam distinctio qui commodi ipsam
-                    iusto, sit animi debitis rerum!</p>
+                <p>Click on the 4 crystals and sum it's value to your score.</p>
+                <br>
+                <p>But be careful, if you overpass the number to reach you'll loose the game. If you win or loose, then press 'Restart' to get a new number </p>
+                <br>
+                <p>Ready? Start clicking!</p>
+
             </div>
 
             <div class="col-2">
@@ -98,8 +101,7 @@
                 <div class="card">
                     <div class="card-body">
                         <p>Win</p>
-                        <br>
-                        <p id="winText"></p>
+                        <p id="wins"></p>
                     </div>
                 </div>
             </div>
@@ -108,13 +110,14 @@
                 <div class="card">
                     <div class="card-body">
                         <p>Loose</p>
-                        <br>
-                        <p id="looseText"></p>
+                        <p id="loose"></p>
                     </div>
                 </div>
             </div>
 
-            <div class="col-5"></div>
+            <div class="col-5">
+                <button type="button" class="btn btn-secondary" id="resetBtn"> Reset </button>
+            </div>
 
 
 
@@ -126,6 +129,7 @@
     </div>
 
     <script>
+
         // 1. Generate the random number the player will try to reach. Number sb from 19 - 120 only.
         
         var randomToGuess = Math.floor(Math.random()*121) + 19;
@@ -134,6 +138,7 @@
         randomToGuessText.textContent = randomToGuess;
 
         // 2. Assign random values to the Crystal Buttons. I want the values to be only from 1 -12.
+       
         var crystal1Value = Math.floor(Math.random()*13) + 1;
         console.log(crystal1Value);
         var crystal2Value = Math.floor(Math.random()*13) + 1;
@@ -143,33 +148,60 @@
         var crystal4Value = Math.floor(Math.random()*13) + 1;
         console.log(crystal4Value);
 
-        // Player score starts in zero.
+        // Player score-wins-looses starts in zero.
         var score=0;
         var scoreText = document.getElementById("score");
         scoreText.textContent = score;
+
+        var wins=0;
+        var winsText = document.getElementById("wins");
+        winsText.textContent = wins;
+
+        var loose=0;
+        var looseText = document.getElementById("loose");
+        looseText.textContent = loose;
         
 
         // ***HERE IS WHERE THE GAME STARTS: The player wins if their total score matches the random number from the beginning of the game ***
     
         // 3. Player clicks the crystal and the value of the crystal shows in the score card. 
-        
-        // function clickingCrystals(){
-
-        // for (var i=0; i < score ; i++) {
-            
-            
+           
         $( "#crystal1" ).on("click" , function() {
           score = score + crystal1Value;
           console.log(score);
           scoreText.textContent = score;
-        });
-            
+          if (score > randomToGuess) {
+            alert ("You overpassed the random number, you lost :c ");
+            loose = loose + 1;
+            looseText.textContent = loose;
+          };
+
+        if (score === randomToGuess){
+            alert ("Cool! You reached the number");
+            wins = wins + 1;
+            winsText.textContent = wins;
+            }
+
+
+        });            
 
             
         $( "#crystal2" ).on("click" , function() {
           score = score + crystal2Value;
           console.log(score);
           scoreText.textContent = score;
+          if (score > randomToGuess) {
+            alert ("You overpassed the random number, you lost :c ");
+            loose = loose + 1;
+            looseText.textContent = loose;
+          };
+
+        if (score === randomToGuess){
+            alert ("Cool! You reached the number");
+            wins = wins + 1;
+            winsText.textContent = wins;
+            }
+
         });
             
 
@@ -177,18 +209,49 @@
           score = score + crystal3Value;
           console.log(score);
           scoreText.textContent = score;
+          if (score > randomToGuess) {
+            alert ("You overpassed the random number, you lost :c ");
+            loose = loose + 1;
+            looseText.textContent = loose;
+          };
+
+        if (score === randomToGuess){
+            alert ("Cool! You reached the number");
+            wins = wins + 1;
+            winsText.textContent = wins;
+            }
+
         });
 
         $( "#crystal4" ).on("click" , function() {
           score = score + crystal4Value;
           console.log(score);
           scoreText.textContent = score;
+          if (score > randomToGuess) {
+            alert ("You overpassed the random number, you lost :c ");
+            loose = loose + 1;
+            looseText.textContent = loose;
+          };
+
+        if (score === randomToGuess){
+            alert ("Cool! You reached the number");
+            wins = wins + 1;
+            winsText.textContent = wins;
+            }
+
         });
 
-        // };
-        // };
 
-        // RESET function
+
+        // // RESET function
+        // $( "#resetBtn" ).on("click" , function() {
+
+        // // execute the random numbers function
+
+        // // reset score to 0
+
+        // };
+           
         
     </script>
 
