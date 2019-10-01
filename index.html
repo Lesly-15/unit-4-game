@@ -52,25 +52,25 @@
             <!-- 4 Buttons of the Crystals -->
             <div class="col-1">
                 
-                <img src="assets/images/crystal1.jpg" />
+                <img id="crystal1" src="assets/images/crystal1.jpg" />
 
             </div>
 
             <div class="col-1">
                 
-                <img src="assets/images/crystal2.jpg" />
+                <img id="crystal2" src="assets/images/crystal2.jpg" />
 
             </div>
 
             <div class="col-1">
                 
-                <img src="assets/images/crystal3.jpg" />
+                <img id="crystal3" src="assets/images/crystal3.jpg" />
 
             </div>
 
             <div class="col-1">
                 
-                <img src="assets/images/crystal4.jpg" />
+                <img id="crystal4" src="assets/images/crystal4.jpg" />
 
             </div>
 
@@ -87,7 +87,6 @@
                 <div class="card">
                     <div class="card-body">
                         <p>Your score is</p>
-                        <br>
                         <p id="score"></p>
                     </div>
                 </div>
@@ -128,11 +127,69 @@
 
     <script>
         // 1. Generate the random number the player will try to reach. Number sb from 19 - 120 only.
+        
         var randomToGuess = Math.floor(Math.random()*121) + 19;
         console.log(randomToGuess);
         var randomToGuessText = document.getElementById("randomToGuess");
         randomToGuessText.textContent = randomToGuess;
-        // 2. Assign random values to the Crystal Buttons. I want the values to be only from 1 -12;
+
+        // 2. Assign random values to the Crystal Buttons. I want the values to be only from 1 -12.
+        var crystal1Value = Math.floor(Math.random()*13) + 1;
+        console.log(crystal1Value);
+        var crystal2Value = Math.floor(Math.random()*13) + 1;
+        console.log(crystal2Value);
+        var crystal3Value = Math.floor(Math.random()*13) + 1;
+        console.log(crystal3Value);
+        var crystal4Value = Math.floor(Math.random()*13) + 1;
+        console.log(crystal4Value);
+
+        // Player score starts in zero.
+        var score=0;
+        var scoreText = document.getElementById("score");
+        scoreText.textContent = score;
+        
+
+        // ***HERE IS WHERE THE GAME STARTS: The player wins if their total score matches the random number from the beginning of the game ***
+    
+        // 3. Player clicks the crystal and the value of the crystal shows in the score card. 
+        
+        // function clickingCrystals(){
+
+        // for (var i=0; i < score ; i++) {
+            
+            
+        $( "#crystal1" ).on("click" , function() {
+          score = score + crystal1Value;
+          console.log(score);
+          scoreText.textContent = score;
+        });
+            
+
+            
+        $( "#crystal2" ).on("click" , function() {
+          score = score + crystal2Value;
+          console.log(score);
+          scoreText.textContent = score;
+        });
+            
+
+        $( "#crystal3" ).on("click" , function() {
+          score = score + crystal3Value;
+          console.log(score);
+          scoreText.textContent = score;
+        });
+
+        $( "#crystal4" ).on("click" , function() {
+          score = score + crystal4Value;
+          console.log(score);
+          scoreText.textContent = score;
+        });
+
+        // };
+        // };
+
+        // RESET function
+        
     </script>
 
 
