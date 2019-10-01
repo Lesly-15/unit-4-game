@@ -26,15 +26,15 @@
 
         // Player score-wins-looses starts in zero.
         var score=0;
-        var scoreText = document.getElementById("score");
+        var scoreText = $("#score")[0];
         scoreText.textContent = score;
 
         var wins=0;
-        var winsText = document.getElementById("wins");
+        var winsText = $("#wins")[0];
         winsText.textContent = wins;
 
         var loose=0;
-        var looseText = document.getElementById("loose");
+        var looseText = $("#loose")[0];
         looseText.textContent = loose;
         
 
@@ -138,7 +138,7 @@
 
         randomToGuess = Math.floor(Math.random()*121) + 19;
         console.log(randomToGuess);
-        randomToGuessText = document.getElementById("randomToGuess");
+        randomToGuessText = $("#randomToGuess")[0];
         randomToGuessText.textContent = randomToGuess;
 
     };
